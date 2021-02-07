@@ -6,12 +6,10 @@ curl -o /etc/ssh/sshd_config https://raw.githubusercontent.com/stirre/hetznerVPS
 service ssh restart
 apt install dnscrypt-proxy -y
 mv /etc/dnscrypt-proxy/dnscrypt-proxy.toml /etc/dnscrypt-proxy/dnscrypt-proxy.toml.backup
-curl -L https://install.pivpn.io > pivpn.sh
-sudo bash pivpn.sh
 curl -o /etc/dnscrypt-proxy/dnscrypt-proxy.toml https://raw.githubusercontent.com/stirre/hetznerVPS/master/dnscrypt-proxy.toml
 curl -o /etc/systemd/system/dnscrypt-proxy.socket https://raw.githubusercontent.com/stirre/hetznerVPS/master/dnscrypt-proxy.socket
 systemctl restart dnscrypt-proxy.socket
 systemctl restart dnscrypt-proxy
-
 curl -L https://install.pivpn.io > pivpn.sh
 sudo bash pivpn.sh
+
