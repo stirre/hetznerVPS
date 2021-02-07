@@ -26,6 +26,7 @@ ufw allow proto tcp from 10.6.0.0/24 to 10.6.0.1 port 53 comment 'wg-pihole-dns-
 ufw allow proto udp from 10.6.0.0/24 to 10.6.0.1 port 53 comment 'wg-pihole-dns-udp'
 ufw allow proto tcp from 10.6.0.0/24 to 10.6.0.1 port 800 comment 'wg-pihole-admin-http-tcp'
 ufw allow 4711/tcp
+ufw allow 51820/udp
 
 curl -o /etc/pihole/pihole-FTL.conf https://raw.githubusercontent.com/stirre/hetznerVPS/master/pihole-FTL.conf
 sed -i '/^function connectFTL/s/4711/4712/' /var/www/html/admin/scripts/pi-hole/php/FTL.php
