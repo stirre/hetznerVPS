@@ -4,6 +4,8 @@ apt dist-upgrade -y
 apt autoremove -y
 curl -o /etc/ssh/sshd_config https://raw.githubusercontent.com/stirre/hetznerVPS/master/sshd_config
 service ssh restart
+apt install dnscrypt-proxy -y
+mv /etc/dnscrypt-proxy/dnscrypt-proxy.toml /etc/dnscrypt-proxy/dnscrypt-proxy.toml.backup
 curl -L https://install.pivpn.io > pivpn.sh
 sudo bash pivpn.sh
 curl -o /etc/dnscrypt-proxy/dnscrypt-proxy.toml https://raw.githubusercontent.com/stirre/hetznerVPS/master/dnscrypt-proxy.toml
