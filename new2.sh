@@ -17,4 +17,4 @@ sed -i '/^function connectFTL/s/4711/4712/' /var/www/html/admin/scripts/pi-hole/
 systemctl stop systemd-resolved
 systemctl disable systemd-resolved
 ufw enable
-reboot
+pihole -a -p
