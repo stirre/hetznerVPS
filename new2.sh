@@ -14,6 +14,9 @@ ufw allow 51820/udp
 curl -o /etc/pihole/pihole-FTL.conf https://raw.githubusercontent.com/stirre/hetznerVPS/master/pihole-FTL.conf
 sed -i '/^function connectFTL/s/4711/4712/' /var/www/html/admin/scripts/pi-hole/php/FTL.php
 
+curl -o /etc/sysctl.conf https://raw.githubusercontent.com/stirre/hetznerVPS/master/sysctl.conf
+curl -o /etc/ufw/sysctl.conf https://raw.githubusercontent.com/stirre/hetznerVPS/master/ufwsysctl.conf
+
 systemctl stop systemd-resolved
 systemctl disable systemd-resolved
 ufw enable
