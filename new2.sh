@@ -21,3 +21,5 @@ systemctl stop systemd-resolved
 systemctl disable systemd-resolved
 ufw enable
 pihole -a -p
+
+ufw route allow in on wg0 out on eth0
