@@ -9,6 +9,7 @@ apt install dnscrypt-proxy -y
 mv /etc/dnscrypt-proxy/dnscrypt-proxy.toml /etc/dnscrypt-proxy/dnscrypt-proxy.toml.backup
 curl -o /etc/dnscrypt-proxy/dnscrypt-proxy.toml https://raw.githubusercontent.com/stirre/hetznerVPS/master/dnscrypt-proxy.toml
 curl -o /lib/systemd/system/dnscrypt-proxy.socket https://raw.githubusercontent.com/stirre/hetznerVPS/master/dnscrypt-proxy.socket
+systemctl daemon-reload
 systemctl restart dnscrypt-proxy.socket
 systemctl restart dnscrypt-proxy
 
