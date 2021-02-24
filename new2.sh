@@ -13,9 +13,6 @@ ufw allow proto tcp from 2a01:4f8:c2c:a67b::/64 to 2a01:4f8:c2c:a67b::/64 port 8
 curl -o /etc/pihole/pihole-FTL.conf https://raw.githubusercontent.com/stirre/hetznerVPS/master/pihole-FTL.conf
 sed -i '/^function connectFTL/s/4711/4712/' /var/www/html/admin/scripts/pi-hole/php/FTL.php
 
-curl -o /etc/sysctl.conf https://raw.githubusercontent.com/stirre/hetznerVPS/master/sysctl.conf
-curl -o /etc/ufw/sysctl.conf https://raw.githubusercontent.com/stirre/hetznerVPS/master/ufwsysctl.conf
-
 sudo sed -i s/"DEFAULT_FORWARD_POLICY=\"DROP"/"DEFAULT_FORWARD_POLICY=\"ACCEPT"/ /etc/default/ufw
 sudo sed -i s/"#net\/ipv4\/ip_forward"/"net\/ipv4\/ip_forward"/ /etc/ufw/sysctl.conf
 sudo sed -i s/"#net\/ipv6\/conf\/default\/forwarding"/"net\/ipv6\/conf\/default\/forwarding"/ /etc/ufw/sysctl.conf
