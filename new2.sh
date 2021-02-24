@@ -10,7 +10,8 @@ ufw allow proto tcp from 2a01:4f8:c2c:a67b::/64 to 2a01:4f8:c2c:a67b::/64 port 5
 ufw allow proto udp from 2a01:4f8:c2c:a67b::/64 to 2a01:4f8:c2c:a67b::/64 port 53 comment 'wg-pihole-dns-udp'
 ufw allow proto tcp from 2a01:4f8:c2c:a67b::/64 to 2a01:4f8:c2c:a67b::/64 port 800 comment 'wg-pihole-admin-http-tcp'
 
-curl -o /etc/pihole/pihole-FTL.conf https://raw.githubusercontent.com/stirre/hetznerVPS/master/pihole-FTL.conf
+
+echo "FTLPORT=4712" >> /etc/pihole/pihole-FTL.conf
 sed -i '/^function connectFTL/s/4711/4712/' /var/www/html/admin/scripts/pi-hole/php/FTL.php
 
 sudo sed -i s/"DEFAULT_FORWARD_POLICY=\"DROP"/"DEFAULT_FORWARD_POLICY=\"ACCEPT"/ /etc/default/ufw
