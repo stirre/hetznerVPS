@@ -18,8 +18,8 @@ sudo sed -i s/"DEFAULT_FORWARD_POLICY=\"DROP"/"DEFAULT_FORWARD_POLICY=\"ACCEPT"/
 sudo sed -i s/"#net\/ipv4\/ip_forward"/"net\/ipv4\/ip_forward"/ /etc/ufw/sysctl.conf
 sudo sed -i s/"#net\/ipv6\/conf\/default\/forwarding"/"net\/ipv6\/conf\/default\/forwarding"/ /etc/ufw/sysctl.conf
 sudo sed -i s/"#net\/ipv6\/conf\/all\/forwarding"/"net\/ipv6\/conf\/all\/forwarding"/ /etc/ufw/sysctl.conf
-sudo sed -i s/"#net.ipv4.ip_forward=1"/"net.ipv4.ip_forward=1"/ /etc/default/ufw
-sudo sed -i s/"#net.ipv6.conf.all.forwarding=1"/"net.ipv6.conf.all.forwarding=1"/ /etc/default/ufw
+sudo sed -i s/"#net.ipv4.ip_forward=1"/"net.ipv4.ip_forward=1"/ /etc/sysctl.conf
+sudo sed -i s/"#net.ipv6.conf.all.forwarding=1"/"net.ipv6.conf.all.forwarding=1"/ /etc/sysctl.conf
 
 systemctl stop systemd-resolved
 systemctl disable systemd-resolved
