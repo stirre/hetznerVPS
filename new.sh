@@ -23,3 +23,6 @@ ufw enable
 curl -L https://install.pivpn.io > pivpn.sh
 sudo bash pivpn.sh
 
+
+
+Wg0 -> MTU = 1500
