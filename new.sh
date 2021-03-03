@@ -6,6 +6,7 @@ sed -i "s/#Port 22/Port 9471/" /etc/ssh/sshd_config
 sed -i "s/#PasswordAuthentication yes/PasswordAuthentication no/" /etc/ssh/sshd_config
 sed -i "s/#KerberosAuthentication/KerberosAuthentication/" /etc/ssh/sshd_config
 sed -i "s/#GSSAPIAuthentication/GSSAPIAuthentication/" /etc/ssh/sshd_config
+timedatectl set-timezone Europe/Helsinki
 service ssh restart
 apt install dnscrypt-proxy -y
 mv /etc/dnscrypt-proxy/dnscrypt-proxy.toml /etc/dnscrypt-proxy/dnscrypt-proxy.toml.backup
