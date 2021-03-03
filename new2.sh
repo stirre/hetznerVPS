@@ -6,9 +6,9 @@ pihole -up
 ufw allow proto tcp from 10.6.0.0/24 to 10.6.0.1 port 53 comment 'wg-pihole-dns-tcp'
 ufw allow proto udp from 10.6.0.0/24 to 10.6.0.1 port 53 comment 'wg-pihole-dns-udp'
 ufw allow proto tcp from 10.6.0.0/24 to 10.6.0.1 port 800 comment 'wg-pihole-admin-http-tcp'
-ufw allow proto tcp from 2a01:4f8:c2c:a67b::/64 to 2a01:4f8:c2c:a67b::/64 port 53 comment 'wg-pihole-dns-tcp'
-ufw allow proto udp from 2a01:4f8:c2c:a67b::/64 to 2a01:4f8:c2c:a67b::/64 port 53 comment 'wg-pihole-dns-udp'
-ufw allow proto tcp from 2a01:4f8:c2c:a67b::/64 to 2a01:4f8:c2c:a67b::/64 port 800 comment 'wg-pihole-admin-http-tcp'
+ufw allow proto tcp from fd42:42:42::/64 to fd42:42:42::1 port 53 comment 'wg-pihole-dns-tcp'
+ufw allow proto udp from fd42:42:42::/64 to fd42:42:42::1 port 53 comment 'wg-pihole-dns-udp'
+ufw allow proto tcp from fd42:42:42::/64 to fd42:42:42::1 port 800 comment 'wg-pihole-admin-http-tcp'
 
 
 echo "FTLPORT=4712" >> /etc/pihole/pihole-FTL.conf
